@@ -10,7 +10,7 @@ st.markdown("Enter a material formula or symbol to fetch basic properties from t
 # Input field
 material = st.text_input("Material formula (e.g., Li, Mg, CrTe2):")
 
-# API Key from Materials Project
+# API Key
 API_KEY = "pvoS51pKX4Yy80JlJL4SnnfkoAuULzsn"
 
 if material:
@@ -27,13 +27,16 @@ if material:
             st.markdown(f"**Density:** `{summary.density:.2f} g/cm³`")
             st.markdown(f"**Energy Above Hull:** `{summary.energy_above_hull:.3f} eV/atom`")
             st.markdown(f"**Formation Energy per Atom:** `{summary.formation_energy_per_atom:.3f} eV`")
+            st.markdown(f"**Volume:** `{summary.volume:.2f} Å³`")
+            st.markdown(f"**Number of Sites:** `{summary.nsites}`")
+            st.markdown(f"**Is Metal:** `{summary.is_metal}`")
+            st.markdown(f"**Is Theoretical:** `{summary.theoretical}`")
 
-            # Safely try to get crystal system and spacegroup symbol
+            # Extract symmetry info safely
             try:
-                crystal_system = summary.symmetry.crystal_system
-                spacegroup_symbol = summary.symmetry.symbol
-                st.markdown(f"**Crystal System:** `{crystal_system}`")
-                st.markdown(f"**Space Group Symbol:** `{spacegroup_symbol}`")
+                st.markdown(f"**Crystal System:** `{summary.symmetry.crystal_system}`")
+                st.markdown(f"**Space Group Symbol:** `{summary.symmetry.symbol}`")
+                st.markdown(f"**Space Group Number:** `{summary.symmetry.number}`")
             except Exception as symm_error:
                 st.warning(f"ℹ️ Symmetry data not available: {symm_error}")
 
