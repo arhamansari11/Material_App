@@ -32,7 +32,7 @@ if material:
             st.markdown(f"**Is Metal:** `{summary.is_metal}`")
             st.markdown(f"**Is Theoretical:** `{summary.theoretical}`")
 
-            # Extract symmetry info safely
+            # Extract symmetry info safely     
             try:
                 st.markdown(f"**Crystal System:** `{summary.symmetry.crystal_system}`")
                 st.markdown(f"**Space Group Symbol:** `{summary.symmetry.symbol}`")
