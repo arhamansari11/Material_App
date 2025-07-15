@@ -2,7 +2,7 @@ import streamlit as st
 from mp_api.client import MPRester
 from pymatgen.core import Composition
 
-# Streamlit app setting
+# Streamlit app setting  
 st.set_page_config(page_title="🔬 Material Property Explorer", layout="centered")
 st.title("🔬 Material Property Explorer")
 st.markdown("Enter a material formula or symbol to fetch basic properties from the Materials Project database.")
