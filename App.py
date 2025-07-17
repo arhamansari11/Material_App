@@ -7,7 +7,7 @@ st.set_page_config(page_title="🔬 Material Property Explorer", layout="centere
 st.title("🔬 Material Property Explorer")
 st.markdown("Enter a material formula or symbol to fetch basic properties from the Materials Project database.")
 
-# Input field 
+# Input fiel
 material = st.text_input("Material formula (e.g., Li, Mg, CrTe2):")
 
 # API Key
